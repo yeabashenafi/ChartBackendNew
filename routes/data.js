@@ -2,22 +2,15 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
-const data = {
-    'January':30,
-    'February':100,
-    'March':20,
-    'April':34,
-    'May':20,
-    'June':33,
-    'July':10,
-    'August':10,
-    'September':30,
-    'October':20,
-    'November':50,
-    'December':90,
+const chartData = { 
+  labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  data: [10,50,40,60,5, 90, 40, 30, 10, 20, 100, 200], 
+  
 }
+
 router.get('/', function(req, res, next) {
-  res.send(data);
+  res.send(chartData);
+
 });
 
 module.exports = router;
